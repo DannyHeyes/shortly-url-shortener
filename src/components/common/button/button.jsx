@@ -1,5 +1,5 @@
 import React from 'react';
-import { btnPrimary, btnSecondary } from './button.module.scss'
+import { btnPrimary, btnSecondary, btnThird } from './button.module.scss'
 
 const PrimaryButton = (props) => {
     return ( 
@@ -18,4 +18,13 @@ export const SecondaryButton = (props) => {
         </button>
      );
 }
+
+export const ThirdButton = (props) => {
+    return( 
+        <button className={btnThird}>
+            {props.children}
+        </button>
+    );
+}
  
+
