@@ -5,15 +5,20 @@ import DesktopNavbar from './DesktopNavBar';
 const window = require("global/window");
 
 const NavBarRender = () => {
-    const [width, setWidth] = React.useState(window.innerWidth);
-    const breakpoint = 1024;
-  
+    const [isDesktop, setDesktop] = React.useState(window.innerWidth > 1023)
+  	
+    const updateNavBar = () => {
+      setDesktop(window.innerWidth > 1023);
+    };
+
     React.useEffect(() => {
-      window.addEventListener("resize", () => setWidth(window.innerWidth))
-    }, [])
+      window.addEventListener("resize", updateNavBar);
+      return () => window.removeEventListener("resize", updateNavBar)
+    });
 
-    return width > breakpoint ?  <DesktopNavbar/> : <MobileNavBar/> ;
-
+    return (
+      (isDesktop) ? <DesktopNavbar/> : <MobileNavBar/>
+    )
 }
 
 export default NavBarRender;
