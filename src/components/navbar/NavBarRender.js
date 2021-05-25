@@ -12,7 +12,7 @@ const NavBarRender = () => {
       window.addEventListener("resize", () => setWidth(window.innerWidth))
     }, [])
 
-    return width < breakpoint ? <MobileNavBar/> : <DesktopNavbar/>;
+    return width > breakpoint ?  <DesktopNavbar/> : <MobileNavBar/> ;
 
 }
 

@@ -15,6 +15,7 @@
     max-width: 1000px;
     height: 160px;
     margin: 0 auto;
+    padding: 0 5%;
     background-color: hsl(257, 27%, 26%);
     background-image: url("../../assets/mobile/bg-shorten-mobile.svg");
     display: flex;
@@ -44,7 +45,7 @@
     input {
       position: absolute;
       top: 10px;
-      margin: 10px 5%;
+      margin: 10px 0;
       text-indent: 5px;
       width: 90%;
       border: none;
@@ -67,8 +68,8 @@
     button {
       position: absolute;
       top: 80px;
-      margin: 10px 5%;
-      width: 91%;
+      margin: 10px 0;
+      width: 90%;
       border: none;
       background-color: hsl(180, 66%, 49%);
       font-weight: 700;
