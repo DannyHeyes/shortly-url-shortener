@@ -1,0 +1,34 @@
+@mixin breakpoint {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+.actionDiv {
+  height: 220px;
+  background-image: url("../../assets/mobile/bg-boost-mobile.svg");
+  background-color: hsl(257, 27%, 26%);
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint() {
+    background-image: url("../../assets/desktop/bg-boost-desktop.svg");
+  }
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+
+    @include breakpoint() {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+  }
+}
